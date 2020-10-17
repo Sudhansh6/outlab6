@@ -1,0 +1,51 @@
+
+    /* Add some padding on document's body to prevent the content
+    to go underneath the header and footer */
+    %enlarge
+    {
+        &:hover {
+            transform: scale(1.2);
+            color: rgb(100,100,200);
+        }
+
+    }
+
+    .header{
+        width: 100%;        
+        background: rgb(20, 16, 56);
+        padding: 10px 0;
+        color: #fff;
+    }
+
+    .container{
+        font-size: 18px;
+        display: flex;
+        margin: 0 auto;
+        font-family: "Verdana"; /* Center the DIV horizontally */
+        padding: 10px 0px;
+    }
+    .left
+    { 
+        width: 80%;
+        display: flex;
+    }
+
+    .container a{
+        color: #fff;
+        text-decoration: none;
+        padding: 0px 60px;
+        @extend %enlarge;
+        display: flex;
+    }
+    @media screen and (max-width:800px)
+    {
+        .right
+        {
+            display: none;
+        }
+        .left
+        {
+            width:100%;
+        }
+    }
+

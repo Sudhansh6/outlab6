@@ -1,0 +1,53 @@
+<div class=center style="width:100%;">
+    <h1 id="title"> Hello {{ contactForm.value.name | titlecase }}!</h1>
+        <div *ngIf="showMsg">
+            <div *ngIf="success; else elseBlock" class="success">
+                Form successfully submitted
+            </div>
+            <ng-template #elseBlock>
+            <div class="danger">Form submission failed</div>
+            </ng-template>
+
+        </div>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"  class="form-group">
+            
+            <mat-form-field >
+                <mat-label>Name:</mat-label>
+                <input matInput formControlName="name" required >
+            </mat-form-field>
+            
+
+            <mat-form-field>
+                <mat-label>Email:</mat-label>
+                <input matInput formControlName="email" type=email required>
+            </mat-form-field>
+    
+            <mat-label>Your Experience:</mat-label>
+            <mat-radio-group formControlName="feedback" required>
+
+                <mat-radio-button value="Great">Great </mat-radio-button><br>
+                <mat-radio-button value="Okay">Okay </mat-radio-button><br>
+                <mat-radio-button value="Not Good">Not Good </mat-radio-button><br>
+            </mat-radio-group>
+            <br>
+
+           
+            <mat-form-field>
+                <mat-label>Comments:</mat-label>
+                <textarea matInput formControlName="comment"></textarea>
+            </mat-form-field>
+            <br>
+            
+            <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+            
+        </form> 
+        <div class="card" style="width: 28rem;">
+                <h2>Your Response:</h2> 
+                <ul>
+                    <li>Name: {{ contactForm.value.name }}</li>
+                    <li>Email: {{ contactForm.value.email }}</li>
+                    <li>Feedback: {{ contactForm.value.feedback }}</li>
+                    <li>Comments: {{ contactForm.value.comment }}</li>
+                </ul>
+        </div>
+    </div>

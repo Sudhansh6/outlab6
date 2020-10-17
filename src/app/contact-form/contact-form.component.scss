@@ -1,0 +1,88 @@
+.center
+{
+    font-family: "Verdana";
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%enlarge
+{
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+#title {
+    text-align: center;
+    font-family: "TimesNewRoman";
+    font-size: 55px;
+    width: 100%;
+    padding: 50px 0px;
+}
+
+mat-radio-button, mat-form-field {
+    @extend %enlarge;
+}
+mat-radio-button{
+    padding: 10px 0px;
+}
+mat-form-field
+{
+    padding: 10px 0px;
+}
+mat-label{
+    color:black;
+}
+
+* {
+    font-family: "Verdana";
+}
+
+button
+{
+    @extend %enlarge;
+    background-color: black;
+    height: 50px;
+    width: 400px;
+    font-size: 20px;
+    color:white;    
+}
+
+form
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.response
+{
+    padding: 30px;
+}
+
+.success
+{
+    margin-bottom: 25px;
+    padding: 15px 60px;
+    background-color: rgb(140,220,150);
+    border-radius: 10px;
+    color: rgb(23, 68, 32);
+}
+
+.danger
+{
+    margin-bottom: 25px;
+    padding: 15px 60px;
+    background-color: rgb(255,100,100);
+    border-radius: 10px;
+    color: rgb(200, 0, 0);
+}
+
+.card
+{
+    padding: 20px 20px;
+    outline: black;
+}
