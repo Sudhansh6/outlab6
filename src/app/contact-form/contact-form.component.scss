@@ -85,6 +85,9 @@ form
     padding: 10px 0px;
     width: 400px;
     ul li{
+        display:block;
+        width: 350px;
+        word-wrap:break-word;
         list-style: none;
     }
 }
