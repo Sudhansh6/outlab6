@@ -12,7 +12,7 @@ import { form } from '../form'
 export class ContactFormComponent implements OnInit {
   contactForm =  new FormGroup({
     name: new FormControl('',[Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.email, Validators.required, ]),
     feedback: new FormControl('',[Validators.required]),
     comment: new FormControl(''),
   });

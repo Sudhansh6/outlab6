@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     ContactFormComponent,
     ContactPageComponent,
     HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

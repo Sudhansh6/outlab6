@@ -1,4 +1,4 @@
-export interface form {
+export interface form {z
   name: string;
   email: string;
   feedback: string;

@@ -1,14 +1,27 @@
-.column {
-    float: left;
-    width: 50%;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 50px;
+.row
+{
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width:800px)
+{
+  .row
+  {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
   }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  .column
+  {
+    font-size: 25px;
+    padding-bottom: 40px;
+    & img
+    {
+      height: 400px;
+      width: 600px;
+    }
   }
+}
