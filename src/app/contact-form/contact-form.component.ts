@@ -17,6 +17,13 @@ export class ContactFormComponent implements OnInit {
     comment: new FormControl(''),
   });
 
+  validResponse =  new FormGroup({
+    name: new FormControl('',[Validators.required]),
+    email: new FormControl('', [Validators.email, Validators.required, ]),
+    feedback: new FormControl('',[Validators.required]),
+    comment: new FormControl(''),
+  });
+
   constructor(private formService: FormService, private fb:FormBuilder){}
 
   ngOnInit() {

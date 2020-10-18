@@ -11,29 +11,27 @@
         </div>
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"  class="form-group">
             
+            <div class="in">Name:</div>
             <mat-form-field >
-                <mat-label>Name:</mat-label>
                 <input matInput formControlName="name" required >
             </mat-form-field>
             
-
+            <div class="in">Email:</div>
             <mat-form-field>
-                <mat-label>Email:</mat-label>
                 <input matInput formControlName="email" type=email required>
             </mat-form-field>
     
-            <mat-label>Your Experience:</mat-label>
+            <div style="font-size: 20px; padding-top: 20px; padding-bottom: 10px;">Your experience:</div>
             <mat-radio-group formControlName="feedback" required>
-
+                
                 <mat-radio-button value="Great">Great </mat-radio-button><br>
                 <mat-radio-button value="Okay">Okay </mat-radio-button><br>
                 <mat-radio-button value="Not Good">Not Good </mat-radio-button><br>
             </mat-radio-group>
             <br>
 
-           
+            <div class="in">Comments:</div>
             <mat-form-field>
-                <mat-label>Comments:</mat-label>
                 <textarea matInput formControlName="comment"></textarea>
             </mat-form-field>
             <br>
