@@ -62,7 +62,7 @@ export class ContactFormComponent implements OnInit {
           this.success = true;
           this.showMsg = true;
           this.validResponse =  this.fb.group(form);
-          this.contactForm.reset();
+          // this.contactForm.reset();
         },
         (error) => {
           this.message = 'Form submission failed';
