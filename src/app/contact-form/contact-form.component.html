@@ -39,13 +39,24 @@
             <button type="submit" [disabled]="!contactForm.valid">Submit</button>
             
         </form> 
-        <div class="card">
-                <h2>Your Response:</h2> 
+        <div class = "response">
+            <div class="card left">
+                    <h2>Your Response:</h2> 
+                    <ul>
+                        <li>Name: {{ contactForm.value.name }}</li>
+                        <li>Email: {{ contactForm.value.email }}</li>
+                        <li>Feedback: {{ contactForm.value.feedback }}</li>
+                        <li>Comments: {{ contactForm.value.comment }}</li>
+                    </ul>
+            </div>
+            <div *ngIf="success" class='card right'>
+                <h2>Last submission: </h2>
                 <ul>
-                    <li>Name: {{ contactForm.value.name }}</li>
-                    <li>Email: {{ contactForm.value.email }}</li>
-                    <li>Feedback: {{ contactForm.value.feedback }}</li>
-                    <li>Comments: {{ contactForm.value.comment }}</li>
+                    <li>Name: {{ validResponse.value.name }}</li>
+                    <li>Email: {{ validResponse.value.email }}</li>
+                    <li>Feedback: {{ validResponse.value.feedback }}</li>
+                    <li>Comments: {{ validResponse.value.comment }}</li>
                 </ul>
+            </div>
         </div>
     </div>

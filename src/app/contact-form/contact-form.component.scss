@@ -67,6 +67,9 @@ form
 .response
 {
     padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    
 }
 
 .success

@@ -38,7 +38,10 @@ export class ContactFormComponent implements OnInit {
       .getValue()
       .subscribe(
         (form) =>{
-          this.contactForm = this.fb.group(form)
+          this.contactForm = this.fb.group(form);
+          this.success = true;
+          this.message = 'Form Retrieved successfully';
+          this.showMsg=true;
         },
         (error) => {
           this.success = false;
@@ -55,10 +58,11 @@ export class ContactFormComponent implements OnInit {
       .submit(this.contactForm.value)
       .subscribe(
         (form) => {
-          this.contactForm = this.fb.group(form);
           this.message = 'Form successfully submitted';
           this.success = true;
           this.showMsg = true;
+          this.validResponse =  this.fb.group(form);
+          this.contactForm.reset();
         },
         (error) => {
           this.message = 'Form submission failed';
