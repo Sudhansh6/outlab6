@@ -12,7 +12,7 @@ import { form } from '../form'
 export class ContactFormComponent implements OnInit {
   contactForm =  new FormGroup({
     name: new FormControl('',[Validators.required]),
-    email: new FormControl('', [Validators.email, Validators.required, ]),
+    email: new FormControl('', [Validators.required, ]),
     feedback: new FormControl('',[Validators.required]),
     comment: new FormControl(''),
   });
@@ -22,24 +22,43 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.getValue();
   } 
+  message = '';
+  showMsg = false;
+  success = false;
   getValue()
   {
     this.formService
       .getValue()
-      .subscribe((form) => (this.contactForm = this.fb.group(form)));
+      .subscribe(
+        (form) =>{
+          this.contactForm = this.fb.group(form)
+        },
+        (error) => {
+          this.success = false;
+          this.message = 'Form Retrieval failed';
+          this.showMsg=true;
+        }
+        );
   }
-  showMsg = false;
-  success = false;
+  
   onSubmit() {
-    this.success = false;
+    this.showMsg = false;
     if(this.contactForm.valid){
     this.formService
       .submit(this.contactForm.value)
-      .subscribe((form) => {
-        this.contactForm = this.fb.group(form);
-        this.showMsg = true;
-        this.success = true;
-      });
+      .subscribe(
+        (form) => {
+          this.contactForm = this.fb.group(form);
+          this.message = 'Form successfully submitted';
+          this.success = true;
+          this.showMsg = true;
+        },
+        (error) => {
+          this.message = 'Form submission failed';
+          this.success = false;
+          this.showMsg = true;
+        }
+        );
   }
 }
 }

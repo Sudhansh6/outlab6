@@ -2,10 +2,10 @@
     <h1 id="title"> Hello {{ contactForm.value.name | titlecase }}!</h1>
         <div *ngIf="showMsg">
             <div *ngIf="success; else elseBlock" class="success">
-                Form successfully submitted
+                {{this.message}}
             </div>
             <ng-template #elseBlock>
-            <div class="danger">Form submission failed</div>
+                <div class="danger">{{this.message}}</div>
             </ng-template>
 
         </div>
